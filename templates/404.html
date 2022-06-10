@@ -1,0 +1,20 @@
+{% extends 'bootstrap/base.html' %}
+{% block styles %}
+{{super()}}
+    <link rel="stylesheet"
+      href="{{url_for('.static', filename='css/styles.css')}}">
+{% endblock %}
+{% block title %}Word Not Found in the Dictionary Database{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <div class="container">
+  <h1 class="display-4">Word Not found</h1>
+  <p class="lead">What you were looking for is just not there.</p>
+  <hr class="my-4">
+  <p><a href="{{ url_for('home') }}">Let's try again!</a></p>
+
+</div>
+    </div>
+
+{% endblock %}

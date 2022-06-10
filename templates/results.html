@@ -1,0 +1,24 @@
+{% extends 'bootstrap/base.html' %}
+{% block styles %}
+{{super()}}
+    <link rel="stylesheet"
+      href="{{url_for('.static', filename='css/styles.css')}}">
+{% endblock %}
+{% block title %}{{ result['word'] }}{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <div class="container">
+  <h1 class="display-4">{{ result['word'] }}</h1>
+  {% for i in range(len) %}
+      <p><img src={{ img[i] }} alt=""></p>
+      <p class="lead"></p>
+      <hr class="my-4">
+      <p>{{ i + 1 }}</p>
+      <p>{{ result['definitions'][i]['type'] }}</p>
+      <p>{{ result['definitions'][i]['definition'] }}</p>
+  {% endfor %}
+</div>
+    </div>
+
+{% endblock %}

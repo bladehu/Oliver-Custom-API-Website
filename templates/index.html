@@ -1,0 +1,23 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block styles %}
+{{super()}}
+    <link rel="stylesheet"
+      href="{{url_for('.static', filename='css/styles.css')}}">
+{% endblock %}
+{% block title %}English dictionary by OliverS{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <div class="container">
+  <h1 class="display-4">Dictionary</h1>
+  <p class="lead">Want to know a definition of a specific word?</p>
+  <hr class="my-4">
+  <p>You've found the right place!</p>
+
+        {{ wtf.quick_form(form, novalidate=True) }}
+
+</div>
+    </div>
+
+{% endblock %}
